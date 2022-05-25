@@ -1,0 +1,154 @@
+
+
+<!--
+  {% if 'ok' in request.Get %}
+     <p><b>Su mensaje ha sido enviado con exito</b></p>
+{% endif %}
+<form action="" method="POST">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label>Nombre *</label>
+    <div class="input-group">{{form.name}}</div>
+    {{form.name.errors}}
+  </div>
+  <div class="form-group">
+    <label>Email *</label>
+    <div class="input-group">{{form.email}}</div>
+    {{form.email.errors}}
+  </div>
+  <div class="form-group">
+    <label>Mensaje *</label>
+    <div class="input-group">{{form.content}}</div>
+    {{form.content.errors}}
+  </div>
+  <div class="text-center">
+    <input type="submit" class="btn btn-primary btn-block py-2"value="Enviar" >
+  </div>
+<input type="submit" value="Enviar" /> 
+</form>
+-->
+
+
+{% load static %}
+<html>
+<!-- Bootstrap -->
+<link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!-- Fuentes -->
+<link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+<!-- Estilos -->
+<link href="{% static 'core/css/estilo.css' %}" rel="stylesheet">
+
+<!-- Bootstrap -->
+<script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <body>
+
+    <h1 class="site-heading text-center text-blue d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">PROTECCION DE LA SALUD DENTAL</span>
+      <span class="site-heading-lower">PROSALDENT</span>
+    </h1>
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>PROSALDENT</title>
+    
+    </head>
+
+    
+      <div class="container-fluid">
+        <div class="row">
+          <!--Menu de Navegacion Dashbort-->
+          <div class="barra-lateral col-12 col-sm-auto">
+            <div class="logo">
+              <h2>MENU</h2>
+            </div>
+    <div class="container-fluid">
+      <div class="row">
+      <div class="menu d-flex d-sm-block justify-content-center flex-wrap">
+    
+        <a href="{% url 'Inicio' %}">INICIO</a>   
+        </a>
+        <a href="{% url 'Clientes' %}">CLIENTES</a>
+        </a>
+        <a href="{% url 'Visita' %}">VISÍTANOS</a>
+        </a>
+        <a href="{% url 'Contacto' %}">CONTACTO</a>
+        </a>
+        <a href="{% url 'Historia' %}">HISTORIA</a>
+        </a>
+      </div>
+    </div>
+
+  <body>
+    <section class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" 
+              src="{% static 'core/img/d.png' %}" alt="">
+    <h1>Contactenos</h1>
+    <form action="/contactar/" method="POST">{% csrf_token %}
+      <p>Asunto: <input type="text" name="txtAsunto/>"</p>
+      <p>Email: <input type="email" name="txtEmail/>"</p>
+      <p>
+        Mensaje:
+        <textarea name="txtMensaje" cols="38" rows="5" style="resize: none;"></textarea>
+      </p>
+      <input type="submit" value="Enviar"/>
+    </form>
+
+    <!-- Pié de página -->
+    <footer class="footer text-faded text-center py-5 ">
+      <div class="container">
+        {{test}}
+        <p class="m-0">
+          {% if tw_Prosaldent %}
+          <a href="{{tw_Prosaldent}}" class="link">
+              <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+          </a>
+          {% endif %}
+          {% if FB_Prosaldent %}
+          <a href="{{FB_Prosaldent}}" class="link">
+              <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+          </a>
+          {% endif %}
+          {% if Ig_Prosaldent %}
+          <a href="{{Ig_Prosaldent}}" class="link">
+              <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+          </a>
+          {% endif %}
+      </p>
+        <p class="m-0 mbt">
+        	<a href="Muestra.html" class="link">Política de privacidad</a> ·
+        	<a href="Muestra.html" class="link">Aviso legal</a> ·
+        	<a href="Muestra.html" class="link">Cookies</a>
+		</p>
+        <p class="m-0 mbt1">&copy; PROSALDENT 2022</p>
+      </div>
+	</footer>
+
+    <!-- Bootstrap -->
+    <script src=" { % static 'core/vendor/jquery/jquery.min.js' % } "></script>
+    <script src=" { % static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' % } "></script>
+
+
+
+
+  </body>
+
+</html>
